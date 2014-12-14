@@ -42,6 +42,7 @@ func TestCounting(t *testing.T) {
 			atomic.AddInt64(&lw, bytes)
 		},
 	}
+	defer il.Close()
 
 	go func() {
 		conn, err := il.Accept()
